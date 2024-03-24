@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { character, gadget, gallery } from './info';
-import { Observable } from 'rxjs';
+import { Observable , of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -27,5 +27,15 @@ export class DataService {
   }
   getgadgetdetail(id:number):Observable<gadget>{
     return this.http.get<gadget>(`${this.url2}/${id}`);
+  }
+  searchdata(term:string,compo:string):Observable<any>{
+      const newurl=`api/my${compo}s`
+      return this.http.get(`${newurl}/?name=${term}`)
+    
+    // else if(compo=="gadget"){
+    //   return this.http.get(`${this.url2}/?name=${term}`)
+    // }
+    // return of([]);
+    
   }
 }
