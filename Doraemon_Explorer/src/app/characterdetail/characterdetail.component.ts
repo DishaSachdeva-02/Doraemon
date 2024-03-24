@@ -3,10 +3,12 @@ import { character } from '../info';
 import { DataService } from '../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-characterdetail',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf,FormsModule],
   templateUrl: './characterdetail.component.html',
   styleUrl: './characterdetail.component.css'
 })
@@ -19,5 +21,13 @@ export class CharacterdetailComponent {
   }
   ngOnInit(){
     this.getCharacterdetail();
+  }
+  save(){
+    if(this.selectedcharacter){
+      this.dataservice.updatecharacter(this.selectedcharacter).subscribe(()=>this.goback());
+    }
+  }
+  goback(){
+     this.location.back();
   }
 }

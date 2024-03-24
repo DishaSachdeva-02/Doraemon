@@ -5,4 +5,15 @@
      <div><p>name:{{selectedcharacter.name}}</p></div>
      <div><p>talent:{{selectedcharacter.Talent}}</p></div>
    </div>
+   <div>
+    <label>Edit:</label>
+    <input type="text" [(ngModel)]="selectedcharacter.name">
+    <input type="text" [(ngModel)]="selectedcharacter.Talent">
+    <button type="button" (click)="save()">Save</button>
+   </div>
 </div>
+<div>
+   <button type="button" (click)="goback()">Back</button>
+</div>
+
+

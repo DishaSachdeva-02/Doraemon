@@ -29,13 +29,28 @@ export class DataService {
     return this.http.get<gadget>(`${this.url2}/${id}`);
   }
   searchdata(term:string,compo:string):Observable<any>{
-      const newurl=`api/my${compo}s`
+      const newurl=`api/my${compo}`
       return this.http.get(`${newurl}/?name=${term}`)
     
-    // else if(compo=="gadget"){
-    //   return this.http.get(`${this.url2}/?name=${term}`)
-    // }
-    // return of([]);
+  }
+  addchar(character:character):Observable<character[]>{
+  
+      return this.http.post<character[]>(this.url1,character,this.httpOptions);
     
+  }
+  addgad(gadget:gadget):Observable<gadget[]>{
+      return this.http.post<gadget[]>(this.url2,gadget,this.httpOptions);
+  }
+  deletecharacter(id:number):Observable<character>{
+      return this.http.delete<character>(`${this.url1}/${id}`, this.httpOptions)
+  }
+  deletegadget(id:number):Observable<gadget>{
+    return this.http.delete<gadget>(`${this.url1}/${id}`, this.httpOptions)
+  }
+  updatecharacter(character:character):Observable<any>{
+    return this.http.put(this.url1,character,this.httpOptions);
+  }
+  updategadget(gadget:gadget):Observable<any>{
+    return this.http.put(this.url2,gadget,this.httpOptions);
   }
 }

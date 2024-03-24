@@ -30,6 +30,6 @@ export class WebapiService implements InMemoryDbService {
     return {mycharacters,mygadgets,mygallery};
   }
   genId<T extends character|gadget>(myTable: T[]): number {
-    return myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 11;
+    return Number(myTable.length > 0 ? Math.max(...myTable.map(t => t.id)) + 1 : 1);
   }
 }

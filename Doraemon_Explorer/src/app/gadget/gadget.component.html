@@ -2,6 +2,7 @@
     <ul>
         <li *ngFor="let l of list">
             <a routerLink="/gadget/{{l.id}}">{{l.name}}</a>
+            <button type="button" (click)="delete(l)">Delete</button>
         </li>
     </ul>
 </div>

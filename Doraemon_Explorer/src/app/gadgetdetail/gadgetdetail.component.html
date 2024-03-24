@@ -6,4 +6,13 @@
         <div><p>name:{{selectedgadget.name}}</p></div>
         <div><p>work:{{selectedgadget.work}}</p></div>
     </div>
+    <div>
+        <label>Edit:</label>
+        <input type="text" [(ngModel)]="selectedgadget.name">
+        <input type="text" [(ngModel)]="selectedgadget.work">
+        <button type="button" (click)="save()">Save</button>
+       </div>
+</div>
+<div>
+    <button type="button" (click)="goback()">Back</button>
 </div>

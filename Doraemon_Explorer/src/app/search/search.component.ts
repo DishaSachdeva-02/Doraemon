@@ -4,6 +4,7 @@ import { Observable,Subject,debounceTime,distinctUntilChanged,switchMap } from '
 import { DataService } from '../data.service';
 import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-search',
   standalone: true,
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
-  constructor(private dataservice:DataService){}
+  constructor(private dataservice:DataService,private location:Location){}
   private searchTerms=new Subject<string>();
   selected$!:Observable<any>;
   option:string="";
@@ -35,5 +36,8 @@ export class SearchComponent {
     
     
    
+  }
+  goback(){
+    this.location.back();
   }
 }

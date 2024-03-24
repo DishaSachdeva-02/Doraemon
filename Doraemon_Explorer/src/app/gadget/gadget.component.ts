@@ -20,4 +20,8 @@ export class GadgetComponent {
   ngOnInit(){
     this.getGadget();
   }
+  delete(l:gadget){
+    this.list=this.list?.filter(gadget=>gadget!=l);
+    this.dataservice.deletegadget(l.id).subscribe();
+  }
 }

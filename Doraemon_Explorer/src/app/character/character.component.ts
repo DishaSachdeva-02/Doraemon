@@ -20,4 +20,8 @@ export class CharacterComponent {
   ngOnInit(){
      this.getCharacter();
   }
+  delete(l:character){
+    this.list=this.list?.filter(character=>character!=l);
+    this.dataservice.deletecharacter(l.id).subscribe();
+  }
 }
