@@ -22,4 +22,10 @@ export class DataService {
   getgallery():Observable<gallery[]>{
     return this.http.get<gallery[]>(this.url3);
   }
+  getcharacterdetail(id:number):Observable<character>{
+    return this.http.get<character>(`${this.url1}/${id}`);
+  }
+  getgadgetdetail(id:number):Observable<gadget>{
+    return this.http.get<gadget>(`${this.url2}/${id}`);
+  }
 }

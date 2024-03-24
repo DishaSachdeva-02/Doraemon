@@ -11,5 +11,6 @@ export interface gadget{
     imgpath:string,
 }
 export interface gallery{
+    id:number,
     imgpath:string;
 }

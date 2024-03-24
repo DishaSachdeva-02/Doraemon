@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { character } from '../info';
 import { DataService } from '../data.service';
 import { NgFor, NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-character',
   standalone: true,
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf,RouterModule],
   templateUrl: './character.component.html',
   styleUrl: './character.component.css'
 })

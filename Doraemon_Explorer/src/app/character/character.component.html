@@ -1,7 +1,7 @@
 <div *ngIf="list">
     <ul>
         <li *ngFor="let l of list">
-            <a>{{l.name}}</a>
+            <a routerLink="/character/{{l.id}}">{{l.name}}</a>
         </li>
     </ul>
 </div>

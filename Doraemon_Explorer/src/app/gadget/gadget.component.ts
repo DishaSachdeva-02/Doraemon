@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { gadget } from '../info';
 import { DataService } from '../data.service';
 import { NgFor, NgIf } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-gadget',
   standalone: true,
-  imports: [NgFor,NgIf],
+  imports: [NgFor,NgIf,RouterModule],
   templateUrl: './gadget.component.html',
   styleUrl: './gadget.component.css'
 })
