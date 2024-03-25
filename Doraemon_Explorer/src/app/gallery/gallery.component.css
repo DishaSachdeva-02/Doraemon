@@ -1,0 +1,11 @@
+.images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 20px;
+}
+img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+}

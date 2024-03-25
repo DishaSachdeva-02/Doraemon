@@ -1,0 +1,16 @@
+.selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
+.image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

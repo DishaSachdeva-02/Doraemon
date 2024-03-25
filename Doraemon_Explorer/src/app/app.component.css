@@ -1,0 +1,18 @@
+.headings{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+.links{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: underline;
+    color:rgb(70, 8, 66);
+    font-size: 20px;
+}
+h1{
+    text-align: center;
+}

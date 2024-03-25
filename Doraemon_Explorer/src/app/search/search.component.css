@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.getdata{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
