@@ -12,6 +12,7 @@ import { gadget } from '../info';
   styleUrl: './add.component.css'
 })
 export class AddComponent {
+  myoption:string="";
   constructor(private dataservice:DataService,private location:Location){}
   add(opt:string,name:string, main:string,imgpath:string){
 
@@ -34,5 +35,8 @@ export class AddComponent {
   }
   goback(){
     this.location.back();
+  }
+  onChange(opt:string){
+    this.myoption=opt;
   }
 }

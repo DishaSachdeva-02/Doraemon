@@ -3,7 +3,7 @@
         <fieldset>
             <legend>Add</legend>
             <label for="compo">Type:</label>
-            <select id="compo" #opt required>
+            <select id="compo" #opt required (change)="onChange(opt.value)">
                 <option></option>
                 <option>characters</option>
                 <option>gadgets</option>
@@ -14,7 +14,9 @@
             <input id="name" type="text" #name required>
             <br>
             <br>
-            <label id="main">Work/Talent:</label>
+            <label for="main" *ngIf="myoption==''">Talent/Work:</label>
+            <label for="main" *ngIf="myoption=='characters' ">Talent:</label>
+            <label for="main" *ngIf="myoption=='gadgets' ">Work:</label>
             <input id="main" type="text" #main required>
             <br>
             <br>

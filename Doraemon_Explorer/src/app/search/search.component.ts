@@ -17,6 +17,7 @@ export class SearchComponent {
   private searchTerms=new Subject<string>();
   selected$!:Observable<any>;
   option:string="";
+  myoption:string="";
   search(term:string,opt:string){
     if(!term.trim()){
       return;
@@ -40,4 +41,12 @@ export class SearchComponent {
   goback(){
     this.location.back();
   }
+   onChange(){
+    if(this.option=="characters"){
+      this.myoption="character";
+    }
+    else{
+      this.myoption="gadget"
+    }
+   }
 }

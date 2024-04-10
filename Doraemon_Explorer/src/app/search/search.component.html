@@ -5,13 +5,13 @@
         <option>characters</option>
         <option>gadgets</option>
     </select>
-    <input type="text" #data (input)="search(data.value,opt.value)">
+    <input type="text" #data (input)="search(data.value,opt.value);onChange()">
     
 </div>
 <div *ngIf="selected$" class="getdata">
    <div *ngFor="let l of selected$ |async">
       <div>Type={{opt.value}}</div>
-      <div><a routerLink="/{{opt.value}}/{{l.id}}">{{l.name}}</a></div>
+      <div><a routerLink="/{{myoption}}/{{l.id}}">{{l.name}}</a></div>
     </div>
 </div>
 <div>
